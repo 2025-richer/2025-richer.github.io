@@ -10,27 +10,8 @@ Disallow: /_worker.js
 Disallow: /_routes.json
 Disallow: /_middleware.js
 
-# 排除开发和管理相关路径
-Disallow: /admin/
-Disallow: /private/
-Disallow: /internal/
-Disallow: /test/
-Disallow: /debug/
-
 # 排除静态资源文件（使用通配符匹配）
 Disallow: /*.json$
-Disallow: /*.xml$
-Disallow: /*.txt$
-Disallow: /pagefind/
-Disallow: /assets/
-Disallow: /node_modules/
-
-# 排除搜索和筛选参数（避免重复内容）
-Disallow: /*?search=*
-Disallow: /*?filter=*
-Disallow: /*?sort=*
-Disallow: /*?page=*
-Disallow: /*?lang=*
 
 # 明确允许重要页面（覆盖 Disallow 规则）
 # 多语言页面 - 所有语言版本
@@ -78,6 +59,17 @@ Allow: /ko-KR/privacy
 Allow: /ko-KR/terms
 Allow: /ko-KR/copyright
 Allow: /ko-KR/disclaimer
+
+Allow: /sitemap-index.xml
+Allow: /sitemap-0.xml
+Allow: /sitemap-1.xml
+Allow: /sitemap-2.xml
+Allow: /sitemap-3.xml
+
+Allow: /llms.txt
+Allow: /llms-small.txt
+Allow: /llms-full.txt
+Allow: /AGENTS.md
 
 # 设置爬取延迟（保护服务器资源）
 Crawl-delay: 1
